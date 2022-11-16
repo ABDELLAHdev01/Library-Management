@@ -6,18 +6,6 @@ include 'connection.php';
 if(!isset($_SESSION['USER_ID'])){
     header("location:login.php");
 }
-
-$conn = $GLOBALS['conn'];
-$id = $_SESSION['USER_ID'];
-$sql = "SELECT * FROM `userdata` WHERE id='$id'";
-$result = mysqli_query($conn,$sql);
-$row = $result->fetch_assoc();
-$name = $row['name'];
-$email = $row['email'];
-$password = $row['password'];
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +21,7 @@ $password = $row['password'];
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <!-- JavaScript Bundle with Popper -->
 
-    <title>Wise Library</title>
+    <title>EL GHOULAM Library</title>
 </head>
 <body class="bgb">
 
@@ -52,41 +40,16 @@ $password = $row['password'];
 
 </div>
 </nav>
-<div class="d-flex">
-<div class="col-11">
-<h4 class="text-white m-5">👋 Welcome back <span class="text-warning"> <?php echo $name; ?> </span></h4>
+<h2 class="text-white m-4">ALL BOOKS 👇</h2>
+
+
 </div>
-<div >
-    <br>
-   <a href="adding.php"> <button class="btn btn-warning" >Add Book</button></a>
+<section class="d-flex justify-content-around flex-wrap gap-3 overflow-hidden my-3">
+                <?php echo books(); ?>
+            </section>
+
+
 </div>
-</div>
-<?php if (isset($_SESSION['message'])): ?>
-				<div class="alert alert-success alert-dismissible fade show">
-				<strong>Success !</strong>
-					<?php 
-						echo $_SESSION['message']; 
-						unset($_SESSION['message']);
-					?>
-					<button type="button" class="btn-close" data-bs-dismiss="alert"></span>
-				</div>
-			<?php endif ?>
-            
-<table class="table table-dark container">
-  <thead>
-    <tr>
-      <th class="text-warning" scope="col">#</th>
-      <th class="text-warning" scope="col">Cover</th>
-      <th class="text-warning" scope="col">Book Name</th>
-      <th class="text-warning" scope="col">Author Name</th>
-      <th class="text-warning" scope="col">Price</th>
-      <th class="text-warning" scope="col">Edit & Remove</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php echo showbooks(); ?>
-  </tbody>
-</table>
 <!-- Modal -->
 
 

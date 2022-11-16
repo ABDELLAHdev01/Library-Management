@@ -34,8 +34,8 @@ include "scripts.php";
     </div>
 </div>
       <div class="d-flex">
-      <a class=" nav-link text-white m-1" href="Login.php">Sign in </a>
-        <a class="nav-link text-white btn btn-warning m-1" href="signup.php">Sign up</a>
+      <a class=" nav-link text-white m-1" href="signup.php">Sign up </a>
+        <a class="nav-link text-dark btn btn-warning m-1" href="login.php">Sign in</a>
       </div>
   </div>
   </div>
@@ -56,7 +56,7 @@ include "scripts.php";
 				</div>
 			<?php endif ?>
         <h2 class="text-warning justify-content-center">SIGN UP</h2>
-        <input id="name" name="name" class=" form-controle my-2 rounded border-0" type="text" placeholder="Enter name" required>
+        <input   id="name" name="name" class=" form-controle my-2 rounded border-0" type="text" placeholder="Enter name" required>
         <input id="email" name="email" class=" form-controle my-2 rounded border-0" type="email" placeholder="Enter email" required>
         <input id="password" name="password" class=" form-controle my-2 rounded border-0" type="Password" placeholder="Enter password" required>
         <button id="sub" name="signup" class="form-controle my-2 btn btn-warning" type="submite">SIGN UP</button>
@@ -106,6 +106,8 @@ include "scripts.php";
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <!-- JS FILE -->
-<script src="scripts.js"></script>
+
+<script type="text/javascript" src="scripts.js"></script>
+
 </body>
 </html>

@@ -6,6 +6,17 @@ include 'connection.php';
 if(!isset($_SESSION['USER_ID'])){
     header("location:login.php");
 }
+
+
+$conn = $GLOBALS['conn'];
+$id = $_SESSION['USER_ID'];
+$sql = "SELECT * FROM `userdata` WHERE id='$id'";
+$result = mysqli_query($conn,$sql);
+$row = $result->fetch_assoc();
+$name = $row['name'];
+$email = $row['email'];
+$password = $row['password'];
+
 ?>
 
 <!DOCTYPE html>
@@ -27,32 +38,35 @@ if(!isset($_SESSION['USER_ID'])){
 
 <nav class="navbar navbar-expand-lg bgnav">
 <div class="container-fluid">
+    
   <a class="navbar-brand text-white" href="dashboard.php">Wise <span class="text-warning"> Library</span></a>
 
 </div>
 
-<div class="d-flex">
-<a href=""><i class="bi bi-bell-fill text-warning m-2 icon-size"></i></a>
+<div class="d-flex me-3">
+<a href="books.php"><i class="bi bi-book text-warning m-2 icon-size"></i></a>
+
 <a href="profile.php"><i class="bi bi-person-circle text-warning m-2 icon-size"></i></a>
-<a href="logout.php"><i class="bi bi-box-arrow-right text-warning m-2 icon-size"></i></a>
-   
+<a href="logout.php"><i class="bi bi-box-arrow-right text-danger m-2 icon-size"></i></a>
+
 </div>
 </nav>
 
 <div>
 <div class="">
 <div class="justify-content-center w-100 mt-3 mb-5">
+    
     <form id="signupform" class="row w-25 m-auto bg-dark rounded p-2 d-flex flex-column justify-content-center" action="scripts.php" method="POST">
         <img class="" src="img/profile.png" alt="">
         <h2 class="text-warning justify-content-center">EDIT PROFILE</h2>
-        <input id="name" name="editedname" value="<?php echo $_SESSION['USER_NAME']; ?>" class=" form-controle my-2 rounded border-0" type="text" placeholder="Enter name" required>
-        <input id="email" name="editedemail" value="<?php echo $_SESSION['USER_EMAIL']; ?>" class=" form-controle my-2 rounded border-0" type="email" placeholder="Enter email" required>
-        <input id="password" name="editedpassword" value="<?php echo $_SESSION['USER_PASSWORD']; ?>" class=" form-controle my-2 rounded border-0" type="Password" placeholder="Enter password" required>
+        <input id="name" name="editedname" value="<?php echo $name; ?>" class=" form-controle my-2 rounded border-0" type="text" placeholder="Enter name" required>
+        <input id="email" name="editedemail" value="<?php echo $email; ?>" class=" form-controle my-2 rounded border-0" type="email" placeholder="Enter email" required>
+        <input id="password" name="editedpassword" value="<?php echo $password; ?>" class=" form-controle my-2 rounded border-0" type="Password" placeholder="Enter password" required>
         
         <button id="sub" name="save" class="form-controle my-2 btn btn-warning" type="submite">SAVE</button>
 
     </form>
-   
+
 
 </div>
 

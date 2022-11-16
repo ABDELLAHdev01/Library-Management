@@ -33,7 +33,7 @@ include "scripts.php";
 </div>
       <div class="d-flex">
       <a class=" nav-link text-white m-1" href="Login.php">Sign in </a>
-        <a class="nav-link text-white btn btn-warning m-1" href="signup.php">Sign up</a>
+        <a class="nav-link text-dark btn btn-warning m-1" href="signup.php">Sign up</a>
       </div>
   </div>
   </div>

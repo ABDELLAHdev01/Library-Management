@@ -1,5 +1,7 @@
 <?php
+
 include 'connection.php';
+include 'scripts.php';
 ?>
 
 
@@ -35,7 +37,7 @@ include 'connection.php';
 </div>
       <div class="d-flex">
         <a class=" nav-link text-white m-1" href="Login.php">Sign in </a>
-        <a class="nav-link text-white btn btn-warning m-1" href="signup.php">Sign up</a>
+        <a class="nav-link text-dark btn btn-warning m-1" href="signup.php">Sign up</a>
       </div>
   </div>
   </div>
@@ -55,21 +57,12 @@ include 'connection.php';
 <!-- test -->
 
 
+<h2 class="text-white m-4">OUR BOOKS 👇</h2>
 
-<p class="container-fluid text-white  mb-5">So you know the drill. For the sixth year in a row, I asked a few of my favorite professional book cover designers (34 of my favorites, in fact) to choose their favorite covers of the last twelve months. They came back with a grand total of 101 glorious covers, representing work by 67 different designers for 54 different imprints. All of their picks, along with what they had to say about them, are below.
+<section class="d-flex justify-content-around flex-wrap gap-3 overflow-hidden my-3">
+                <?php echo books(); ?>
+            </section>
 
-But as you may know if you’re a frequent Literary Hub reader, I also like stats, and therefore I have tallied the best of the best for you here. Feel free to skip that part if you’d just like to look at some pretty book art. Either way, I think you’ll enjoy:</p>
-
-<div class="d-flex justify-content-around container-fluid row gap-3">
-    <div class="col-2 img"><img class="w-100"  src="img/1.jpg" alt=""></div>
-    <div class="col-2 img"><img class="w-100" src="img/2.JPG" alt=""></div>
-    <div class="col-2 img"><img class="w-100" src="img/3.jpg" alt=""></div>
-
-</div>
-<div class="d-flex justify-content-around container-fluid row gap-3 mt-5 mb-5">
-    <div class="col-2 img"><img class="w-100"  src="img/4.webp" alt=""></div>
-    <div class="col-2 img"><img class="w-100" src="img/5.JPG" alt=""></div>
-    <div class="col-2 img"><img class="w-100" src="img/6.jpg" alt=""></div>
 
 </div>
 <!-- Footer -->
