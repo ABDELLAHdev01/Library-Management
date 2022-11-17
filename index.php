@@ -2,6 +2,11 @@
 
 include 'connection.php';
 include 'scripts.php';
+
+if(isset($_SESSION['USER_ID'])){
+    header("location:dashboard.php");
+}
+
 ?>
 
 

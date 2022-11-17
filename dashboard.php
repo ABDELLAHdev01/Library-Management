@@ -75,7 +75,6 @@ $password = $row['password'];
 <table class="table table-dark container">
   <thead>
     <tr>
-      <th class="text-warning" scope="col">#</th>
       <th class="text-warning" scope="col">Cover</th>
       <th class="text-warning" scope="col">Book Name</th>
       <th class="text-warning" scope="col">Author Name</th>

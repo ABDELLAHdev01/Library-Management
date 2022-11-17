@@ -1,6 +1,10 @@
 <?php
 include "connection.php";
 include "scripts.php";
+if(isset($_SESSION['USER_ID'])){
+    header("location:dashboard.php");
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,8 +13,11 @@ include "scripts.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS Style -->
-	<link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/guillaumepotier/Parsley.js@2.9.2/doc/assets/docs.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/guillaumepotier/Parsley.js@2.9.2/src/parsley.css" />
     <!-- CSS only -->
+    <link href="style.css" rel="stylesheet" />
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <!-- JavaScript Bundle with Popper -->
 
@@ -43,7 +50,7 @@ include "scripts.php";
 <div class="">
 <div class="justify-content-center w-100 mt-5 ">
     <!-- <div id="bgform"> -->
-    <form class="row w-25 m-auto bg-dark rounded p-2 d-flex flex-column justify-content-center" action="scripts.php" method="POST">
+    <form data-parsley-validate id="formlogin" class="row w-25 m-auto bg-dark rounded p-2 d-flex flex-column justify-content-center" action="scripts.php" method="POST">
     <?php if (isset($_SESSION['message'])): ?>
 				<div class="alert alert-danger alert-dismissible fade show">
 				<strong>Oops ! </strong>
@@ -55,10 +62,9 @@ include "scripts.php";
 				</div>
 			<?php endif ?>
         <h2 class="text-warning justify-content-center">SIGN IN</h2>
-        <input class=" form-controle my-2 rounded border-0" type="email" name="email" placeholder="ENTER EMAIL" required>
-       
-        <input name="password" class="form-controle my-2 rounded border-0" type="Password"  placeholder="ENTER PASSWORD" required>
-        <button  class="form-controle my-2 btn btn-warning" type="submite" name="login"> SIGN IN</button>
+        <input id="logemail" class=" form-controle my-2 rounded border-0" type="email" name="email" placeholder="ENTER EMAIL" required data-parsley-type="email"	 >
+        <input id="logpw" name="password" class="form-controle my-2 rounded border-0" type="Password"  placeholder="ENTER PASSWORD" required data-parsley-length="[6, 10]"	 >
+        <button id="loginbtn"  class="form-controle my-2 btn btn-warning" type="submite" name="login"> SIGN IN</button>
        <p class="text-white">Dont have account ? <a class="text-warning" href="signup.php">register now!</a></p>
     </form>
     <!-- </div> -->
@@ -107,6 +113,10 @@ include "scripts.php";
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <!-- JS FILE -->
 <script src="scripts.js"></script>
+<!-- Jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- parsely -->
+<script src="parsley.js"></script>
 
 </body>
 </html>
