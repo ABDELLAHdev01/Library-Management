@@ -31,6 +31,7 @@ $password = $row['password'];
     <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <!-- JavaScript Bundle with Popper -->
+<link rel="icon" href="img/icon.png" type="image/png">
 
     <title>EL GHOULAM Library</title>
 </head>
@@ -64,7 +65,7 @@ $password = $row['password'];
         <input id="password" name="editedpassword" value="<?php echo $password; ?>" class=" form-controle my-2 rounded border-0" type="Password" placeholder="Enter password" required>
         
         <button id="sub" name="save" class="form-controle my-2 btn btn-warning" type="submite">SAVE</button>
-
+        <button class="form-controle my-2 btn btn-danger"> <a href="" class="text-white">  DELETE ACCOUNT !  </a></button>
     </form>
 
 

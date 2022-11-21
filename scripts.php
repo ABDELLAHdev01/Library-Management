@@ -11,7 +11,6 @@ if(isset($_POST['editbk']))      editbook();
 
 
 
-
 function signup(){
     $name = $_POST['name'];
     $email = $_POST['email'];
@@ -41,7 +40,8 @@ function signin(){
     $conn = $GLOBALS['conn'];
     // login inputs on variabls
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+
     $sql = "SELECT * FROM `userdata` WHERE `email`= '$email' && `password`='$password'";
     $result = mysqli_query($conn,$sql);
     // checking if he select
@@ -50,7 +50,9 @@ function signin(){
         
     $row = $result->fetch_assoc();
     $_SESSION['USER_ID']=$row['id'];
-
+    $_SESSION['USER_EM']=$row['email'];
+    $_SESSION['PW']=$row['password'];
+    
     
     header('location: dashboard.php');
     }else {
@@ -60,6 +62,11 @@ function signin(){
     }
 
 
+}
+
+if(isset($_POST['check'])){
+    setcookie('email',$_SESSION['USER_EM'],time()+356*24*3600,null,null,false,true);
+    setcookie('password',$_SESSION['PW'],time()+356*24*3600,null,null,false,true);
 }
 
 function edit(){
@@ -167,12 +174,21 @@ function editbook(){
     $target= "img/".$photo_name;
     move_uploaded_file($sourcePath,$target);
     
-   
-    $sql = "UPDATE `orders` SET `bookname`='$bookname',`author`='$authorname',`Price`='$price', `cover`='$photo_name' WHERE bookid='$ided'";
-    $result = mysqli_query($con,$sql);
-    $_SESSION['message'] = "Book has been edited!";
+    if(empty($photo)){
+        $sql = "UPDATE `orders` SET `bookname`='$bookname',`author`='$authorname',`Price`='$price'  WHERE bookid='$ided'";
+        $result = mysqli_query($con,$sql);
+        $_SESSION['message'] = "message invalid";
+        header('location: dashboard.php');
 
-    header('location: dashboard.php');
+    }else{
+        $sql = "UPDATE `orders` SET `bookname`='$bookname',`author`='$authorname',`Price`='$price', `cover`='$photo_name' WHERE bookid='$ided'";
+        $result = mysqli_query($con,$sql);
+        $_SESSION['message'] = "Book has been edited!";
+    
+        header('location: dashboard.php');
+    }
+   
+   
 
 }
 

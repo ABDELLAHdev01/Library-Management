@@ -6,6 +6,20 @@ include 'connection.php';
 if(!isset($_SESSION['USER_ID'])){
     header("location:login.php");
 }
+
+$conn = $GLOBALS['conn'];
+$id = $_SESSION['USER_ID'];
+
+$count = "select * from orders where userID= $id";
+$result = mysqli_query($conn, $count);
+$num = mysqli_num_rows($result);
+
+
+$countall = "SELECT * FROM `orders`;";
+$resultall = mysqli_query($conn, $countall);
+$numall = mysqli_num_rows($resultall);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +34,7 @@ if(!isset($_SESSION['USER_ID'])){
     <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <!-- JavaScript Bundle with Popper -->
+<link rel="icon" href="img/icon.png" type="image/png">
 
     <title>EL GHOULAM Library</title>
 </head>
@@ -40,6 +55,22 @@ if(!isset($_SESSION['USER_ID'])){
 
 </div>
 </nav>
+
+<section class="statistics">
+        <div class="booksDivider d-flex align-items-center my-3">
+        </div>
+        <div class="d-flex justify-content-between">
+          <div class="bg-cstm rounded my-3 d-flex flex-column justify-content-between" style="width: 30%;">
+            <p class="text-white text-center py-2">Total Of Your Books</p>
+            <p class="text-white text-center fs-1 fw-bold"><?php echo $num; ?></p>
+          </div>
+          <div class="bg-cstm rounded my-3 d-flex flex-column justify-content-between" style="width: 30%;">
+            <p class="text-white text-center py-2">Total of Books</p>
+            <p class="text-white text-center fs-1 fw-bold"><?php echo $numall; ?></p>
+          </div>
+        
+        </div>
+      </section>
 <h2 class="text-white m-4">ALL BOOKS 👇</h2>
 
 

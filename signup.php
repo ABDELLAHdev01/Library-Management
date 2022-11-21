@@ -22,6 +22,7 @@ if(isset($_SESSION['USER_ID'])){
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/guillaumepotier/Parsley.js@2.9.2/doc/assets/docs.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/guillaumepotier/Parsley.js@2.9.2/src/parsley.css" />
   <!-- END parsley css-->
+  <link rel="icon" href="img/icon.png" type="image/png">
 
     <title>Wise Library</title>
 </head>
@@ -29,15 +30,17 @@ if(isset($_SESSION['USER_ID'])){
 
 <nav class="navbar navbar-expand-lg bgnav">
 <div class="container-fluid">
-<a class="navbar-brand text-warning" href="index.php">Wise <span class="text-white"> Library</span></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-  </button>
-  <div class="collapse navbar-collapse  " id="navbarNavAltMarkup">
+  <a class="navbar-brand text-warning" href="index.php">Wise <span class="text-white"> Library</span></a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+
+</button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <div class="navbar-nav">
         <a class="nav-item nav-link  text-white" href="index.php">Home <span class="sr-only"></span></a>
-        <a class="nav-item nav-link text-white" href="404.php">Books</a>
-        <a class="nav-item nav-link text-white" href="404.php">About us</a>
-        <a class="nav-item nav-link text-white" href="404.php">Contact us</a>
+        <a class="nav-item nav-link text-white" href="allbooks.php">Books</a>
+        <a class="nav-item nav-link text-white" href="aboutus.php">About us</a>
+        <a class="nav-item nav-link text-white" href="contactus.php">Contact us</a>
     </div>
 </div>
       <div class="d-flex">
@@ -50,8 +53,8 @@ if(isset($_SESSION['USER_ID'])){
 
 <div>
 <div class="">
-<div class="justify-content-center w-100 mt-5 mb-5">
-    <form data-parsley-validate id="signupform" class="row w-25 m-auto bg-dark rounded p-2 d-flex flex-column justify-content-center" action="scripts.php" method="POST">
+<div class="justify-content-center w-100 mt-4 mb-5">
+    <form data-parsley-validate id="signupform" class="row w-50  m-auto bg-dark rounded p-2 d-flex flex-column justify-content-center" action="scripts.php" method="POST">
         <?php if (isset($_SESSION['dejakayn'])): ?>
 				<div class="alert alert-danger alert-dismissible fade show">
 				<strong>Oops ! </strong>

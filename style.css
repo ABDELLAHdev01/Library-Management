@@ -1,34 +1,5 @@
-
-#emailer{
-    color: red;
-    font-size: 16px;
-    letter-spacing: 1px;
-    display: none;
-}
-
-#pwerr{
-    color: red;
-    font-size: 16px;
-    letter-spacing: 1px;
-    display: none;
-}
-#erorrNameSu{
-    color: red;
-    font-size: 16px;
-    letter-spacing: 1px;
-    display: none;
-}
-#erorrEmailSu{
-    color: red;
-    font-size: 16px;
-    letter-spacing: 1px;
-    display: none;
-}
-#erorrPasswordSu{
-    color: red;
-    font-size: 16px;
-    letter-spacing: 1px;
-    display: none;
+#yellow:hover{
+    color: yellow;
 }
 
 

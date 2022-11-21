@@ -34,6 +34,7 @@ $_SESSION['cover'] = $pic;
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/guillaumepotier/Parsley.js@2.9.2/doc/assets/docs.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/guillaumepotier/Parsley.js@2.9.2/src/parsley.css" />
   <!-- END parsley css-->
+  <link rel="icon" href="img/icon.png" type="image/png">
 
     <title>EL GHOULAM Library</title>
 </head>
@@ -65,7 +66,7 @@ $_SESSION['cover'] = $pic;
 <input value="<?php echo $price;  ?>" name="edprice" type="text" placeholder="Enter Price" class=" form-controle my-2 rounded border-0" required data-parsley-type="digits">
 <input name="img"type="file" value=""
        id="avatar" name="avatar"
-       accept="image/png, image/jpeg" class="form-control form-control-sm" required >
+       accept="image/png, image/jpeg" class="form-control form-control-sm"  >
 <button name="editbk" class="form-controle my-2 btn btn-warning" type="submite">ADD</button>
 
 </form>

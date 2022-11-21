@@ -19,6 +19,7 @@ include 'scripts.php';
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<link rel="icon" href="img/icon.png" type="image/png">
 
     <title>Wise Library</title>
 </head>
@@ -32,9 +33,9 @@ include 'scripts.php';
   <div class="collapse navbar-collapse  " id="navbarNavAltMarkup">
     <div class="navbar-nav">
         <a class="nav-item nav-link disabled text-warning" href="#">Home <span class="sr-only"></span></a>
-        <a class="nav-item nav-link text-white" href="404.php">Books</a>
-        <a class="nav-item nav-link text-white" href="404.php">About us</a>
-        <a class="nav-item nav-link text-white" href="404.php">Contact us</a>
+        <a class="nav-item nav-link text-white" href="allbooks.php">Books</a>
+        <a class="nav-item nav-link text-white" href="aboutus.php">About us</a>
+        <a class="nav-item nav-link text-white" href="contactus.php">Contact us</a>
     </div>
 </div>
       <div class="d-flex">

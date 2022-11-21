@@ -71,8 +71,11 @@ $password = $row['password'];
 					<button type="button" class="btn-close" data-bs-dismiss="alert"></span>
 				</div>
 			<?php endif ?>
-            
-<table class="table table-dark container">
+
+
+     
+            <div class="table-responsive">
+<table class="table table-dark ">
   <thead>
     <tr>
       <th class="text-warning" scope="col">Cover</th>
@@ -86,6 +89,7 @@ $password = $row['password'];
     <?php echo showbooks(); ?>
   </tbody>
 </table>
+</div> 
 <!-- Modal -->
 
 
