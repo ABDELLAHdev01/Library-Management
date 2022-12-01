@@ -24,30 +24,20 @@ include 'scripts.php';
     <title>Wise Library</title>
 </head>
 <body class="bgb">
+<section class="py-5 mt-5">
+        <div class="container">
+            <div class="row row-cols-1 d-flex justify-content-center align-items-center">
+                <div class="col-md-10 text-center"><img class="img-fluid w-100" src="img/404.svg" /></div>
+                <div class="col text-center">
+                    <h2 class="text-warning display-3 fw-bold mb-4">Page Not Found</h2>
+                    <p class="fs-4 text-warning">Fusce adipiscing sit, torquent porta pulvinar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<nav class="navbar navbar-expand-lg bgnav">
-<div class="container-fluid">
-  <a class="navbar-brand text-warning" href="index.php">Wise <span class="text-white"> Library</span></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-  </button>
-  <div class="collapse navbar-collapse  " id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-        <a class="nav-item nav-link disabled text-warning" href="#">Home <span class="sr-only"></span></a>
-        <a class="nav-item nav-link text-white" href="allbooks.php">Books</a>
-        <a class="nav-item nav-link text-white" href="aboutus.php">About us</a>
-        <a class="nav-item nav-link text-white" href="contactus.php">Contact us</a>
-    </div>
-</div>
-      <div class="d-flex">
-        <a class=" nav-link text-white m-1" href="Login.php">Sign in </a>
-        <a class="nav-link text-dark btn btn-warning m-1" href="signup.php">Sign up</a>
-      </div>
-  </div>
-  </div>
-</nav>
 <!-- 404 -->
-<center> <h1 class="text-muted">404</h1></center>
-<center> <h3 class="text-muted">Ops ! This Page Makaynach ^_^</h3></center>
+
 <!-- Footer -->
 </body>
 </html>

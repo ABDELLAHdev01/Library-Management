@@ -50,8 +50,8 @@ function signin(){
         
     $row = $result->fetch_assoc();
     $_SESSION['USER_ID']=$row['id'];
-    $_SESSION['USER_EM']=$row['email'];
-    $_SESSION['PW']=$row['password'];
+    // $_SESSION['USER_EM']=$row['email'];
+    // $_SESSION['PW']=$row['password'];
     
     
     header('location: dashboard.php');

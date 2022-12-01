@@ -20,6 +20,15 @@ $resultall = mysqli_query($conn, $countall);
 $numall = mysqli_num_rows($resultall);
 
 
+$countuser = "SELECT * FROM `userdata`";
+$resdata = mysqli_query($conn, $countuser);
+$numallusers = mysqli_num_rows($resdata );
+
+
+$sumreq = "SELECT SUM(Price) as priceSum FROM orders";
+$ressum  = mysqli_query($conn,$sumreq);
+$prcSum =$ressum->fetch_assoc(); 
+$resPriceSum=$prcSum['priceSum'];
 ?>
 
 <!DOCTYPE html>
@@ -32,8 +41,7 @@ $numall = mysqli_num_rows($resultall);
 	<link href="style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"> 
     <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-<!-- JavaScript Bundle with Popper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sketchy/bootstrap.min.css" integrity="sha384-RxqHG2ilm4r6aFRpGmBbGTjsqwfqHOKy1ArsMhHusnRO47jcGqpIQqlQK/kmGy9R" crossorigin="anonymous"><!-- JavaScript Bundle with Popper -->
 <link rel="icon" href="img/icon.png" type="image/png">
 
     <title>EL GHOULAM Library</title>
@@ -56,21 +64,62 @@ $numall = mysqli_num_rows($resultall);
 </div>
 </nav>
 
-<section class="statistics">
-        <div class="booksDivider d-flex align-items-center my-3">
-        </div>
-        <div class="d-flex justify-content-between">
-          <div class="bg-cstm rounded my-3 d-flex flex-column justify-content-between" style="width: 30%;">
-            <p class="text-white text-center py-2">Total Of Your Books</p>
-            <p class="text-white text-center fs-1 fw-bold"><?php echo $num; ?></p>
-          </div>
-          <div class="bg-cstm rounded my-3 d-flex flex-column justify-content-between" style="width: 30%;">
-            <p class="text-white text-center py-2">Total of Books</p>
-            <p class="text-white text-center fs-1 fw-bold"><?php echo $numall; ?></p>
-          </div>
-        
-        </div>
-      </section>
+<div class="row mt-5">
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="bg-warning card shadow border-start-primary py-2">
+                                <div class="card-body ">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col me-2">
+                                            <div class="text-uppercase text-primary fw-bold text-xs mb-1"><span>Your Books</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span><?php echo $num; ?></span></div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-calendar fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="bg-warning card shadow border-start-success py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col me-2">
+                                            <div class="text-uppercase text-primary fw-bold text-xs mb-1"><span>All Books</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span><?php echo $numall; ?></span></div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="bg-warning card shadow border-start-success py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col me-2">
+                                            <div class="text-uppercase text-primary fw-bold text-xs mb-1"><span>Total Users</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span><?php echo $numallusers; ?></span></div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="bg-warning card shadow border-start-warning py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col me-2">
+                                            <div class="text-uppercase text-primary fw-bold text-xs mb-1"><span>TOTAL PRICE</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span><?php echo $resPriceSum ; ?>DH</span></div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-comments fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 <h2 class="text-white m-4">ALL BOOKS 👇</h2>
 
 

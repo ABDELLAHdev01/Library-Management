@@ -17,8 +17,7 @@ if(isset($_SESSION['USER_ID'])){
     <!-- CSS Style -->
 	<link href="style.css" rel="stylesheet" />
     <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-   <!-- BEGIN parsley css-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sketchy/bootstrap.min.css" integrity="sha384-RxqHG2ilm4r6aFRpGmBbGTjsqwfqHOKy1ArsMhHusnRO47jcGqpIQqlQK/kmGy9R" crossorigin="anonymous">   <!-- BEGIN parsley css-->
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/guillaumepotier/Parsley.js@2.9.2/doc/assets/docs.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/guillaumepotier/Parsley.js@2.9.2/src/parsley.css" />
   <!-- END parsley css-->
@@ -45,7 +44,7 @@ if(isset($_SESSION['USER_ID'])){
 </div>
       <div class="d-flex">
       <a class=" nav-link text-white m-1" href="signup.php">Sign up </a>
-        <a class="nav-link text-dark btn btn-warning m-1" href="login.php">Sign in</a>
+        <a class="nav-link text-dark btn btn-warning m-1 px-3" href="login.php">Sign in</a>
       </div>
   </div>
   </div>
@@ -53,8 +52,8 @@ if(isset($_SESSION['USER_ID'])){
 
 <div>
 <div class="">
-<div class="justify-content-center w-100 mt-4 mb-5">
-    <form data-parsley-validate id="signupform" class="row w-50  m-auto bg-dark rounded p-2 d-flex flex-column justify-content-center" action="scripts.php" method="POST">
+<div class="justify-content-center w-100 mt-5 mb-5">
+    <form data-parsley-validate id="signupform" class="row w-25  m-auto bg-dark rounded p-2 d-flex flex-column justify-content-center" action="scripts.php" method="POST">
         <?php if (isset($_SESSION['dejakayn'])): ?>
 				<div class="alert alert-danger alert-dismissible fade show">
 				<strong>Oops ! </strong>
@@ -120,5 +119,5 @@ if(isset($_SESSION['USER_ID'])){
 <!-- Jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <!-- parsely -->
-<script src="parsley.js"></script>dy>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js" ></script>
 </html>
